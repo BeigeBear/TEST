@@ -1,0 +1,32 @@
+package ch13;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class Bank1Bean {
+
+	private int aid;
+	private String aname;
+	private int balance;
+	
+	Connection conn = null;
+	Statement stmt = null;
+	PreparedStatement pstmt = null;
+	
+	public void connect() {
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
+			conn = dataSource.getConnection();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

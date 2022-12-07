@@ -1,0 +1,64 @@
+package com.addrbook.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
+
+import com.addrbook.*;
+import com.addrbook.model.AddrDto;
+import com.addrbook.service.InsertService;
+import com.addrbook.service.InsertServiceImpl;
+
+@WebServlet("*.do")
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+    public FrontController() {
+        super();
+    }
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet");
+		actionDo(request,response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet");
+		actionDo(request,response);
+	}
+
+	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String uri = request.getRequestURI();
+		String conPath = request.getContextPath();
+		String command = uri.substring(conPath.length());
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		if(command.equals("/insert/do")) {
+			System.out.println("insert.do 입니다");
+			
+			AddrDto insAddr = new AddrDto();
+			insAddr.setName(request.getParameter("name"));
+			insAddr.setEmail(request.getParameter("email"));
+			insAddr.setComdept(request.getParameter("comdept"));
+			insAddr.setBirth(request.getParameter("birth"));
+			insAddr.setTel(request.getParameter("tel"));
+			insAddr.setMemo(request.getParameter("memo"));
+			
+			request.setAttribute("insAddr", insAddr);
+			
+			InsertService insertService = new InsertServiceImpl();
+			insertService.execute(request, response);
+			response.sendRedirect("/Addrbook/list.do");
+		}
+		
+		
+		
+		
+	}
+}

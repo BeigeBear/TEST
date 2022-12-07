@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<jsp:useBean id="bb"  scope="page" class="ch13.Bank1Bean"></jsp:useBean>
+<jsp:useBean id="bb2" scope="page" class="ch13.Bank2Bean"></jsp:useBean>
+
+<%
+	if(request.getMethod().equals("POST")) {
+		if(bb.transfer(Integer.parseInt(request.getParameter("bal")))) {
+			out.println("<script>alert('정상처리 되었습니다')</script>");
+		}
+		else {
+			out.println("<script>alert('수용한도를 초과했습니다')</script>");
+		}
+	}
+	bb.getData();
+	bb2.getData();
+
+%>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ch12:이체 테스트</title>
+</head>
+
+<body>
+<div align="center">
+	<h3>계좌현황</h3>
+	<hr>
+	
+	<table border="1" cellpadding=5 cellsapcing=0 %>
+		<tr>
+			<td>bank1</td>
+			<td>이름 : <%= bb.getAname() %></td>
+			<td>잔액 : <%= bb.getBalance() %></td>
+			
+		</tr>
+		<tr>
+			<td>bank2</td>
+			<td>이름 : <%= bb2.getAname()%></td>
+			<td>잔액 : <%= bb2.getBalance() %></td>
+		</tr>
+	</table>
+
+</div>
+</body>
+</html>

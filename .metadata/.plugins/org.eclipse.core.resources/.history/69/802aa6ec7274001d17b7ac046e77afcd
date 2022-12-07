@@ -1,0 +1,30 @@
+package ch13;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import javax.naming.Context;
+
+public class Bank1Bean {
+
+	private int aid;
+	private String aname;
+	private int balance;
+	
+	Connection conn = null;
+	Statement stmt = null;
+	PreparedStatement pstmt = null;
+	
+	public void connect() {
+		try {
+			Context initContext = new InitalContext();
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+}

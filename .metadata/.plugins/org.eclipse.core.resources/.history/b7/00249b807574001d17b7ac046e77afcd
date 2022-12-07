@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<jsp:useBean id="bb"  scope="page" class="ch13.Bank1Bean"></jsp:useBean>
+<jsp:useBean id="bb2" scope="page" class="ch13.Bank2Bean"></jsp:useBean>
+
+<%
+	if(request.getMethod().equals("POST")) {
+		if(bb.transfer(Integer.parseInt(request.getParameter("bal")))) {
+			out.println("<script>alert('정상처리 되었습니다')</script>");
+		}
+		else {
+			out.println("<script>alert('수용한도를 초과했습니다')</script>");
+		}
+	}
+	bb.getData();
+	bb2.getData();
+
+%>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
