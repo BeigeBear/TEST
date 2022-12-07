@@ -1,11 +1,9 @@
 package com.addrbook.service;
 
-import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.addrbook.model.AddrDao;
-import com.addrbook.model.AddrDto;
 
 public class DeleteServiceImpl implements DeleteService {
 	private AddrDao addrDao;
@@ -15,8 +13,9 @@ public class DeleteServiceImpl implements DeleteService {
 	}
 
 	@Override
-	public ArrayList<AddrDto> execute(HttpServletRequest request, HttpServletResponse response) {
-		return addrDao.getList();
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		int deleteId = (int) request.getAttribute("deleteId");
+		addrDao.deleteAddr(deleteId);
 	}
 
 }

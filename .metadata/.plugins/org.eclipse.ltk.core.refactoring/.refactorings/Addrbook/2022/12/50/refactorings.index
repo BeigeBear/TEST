@@ -1,13 +1,15 @@
-1670290971321	Rename resource 'AddrBean.java'
-1670290988999	Rename resource 'AddrBook.java'
-1670291024362	Rename compilation unit 'addrDao.java'
-1670291030335	Rename compilation unit 'addrDto.java'
-1670294611187	Copy compilation unit
-1670295067550	Copy compilation unit
-1670295092472	Copy compilation unit
-1670295104284	Copy compilation unit
-1670295116506	Copy compilation unit
-1670295127416	Copy compilation unit
-1670295136647	Copy compilation unit
-1670295143429	Copy compilation unit
-1670295149074	Delete element
+1670373318979	Rename resource 'ddd'
+1670373347476	Delete elements
+1670373417034	Move 'FrontController.java' to 'conrtoller'
+1670373422800	Move 2 resources to 'model'
+1670373434750	Move 8 resources to 'service'
+1670373467120	Rename resource 'conrtoller'
+1670373719684	Move 6 resources to 'META-INF'
+1670373725637	Move 6 resources to 'WebContents'
+1670373756437	Rename resource 'index2.jsp'
+1670373760432	Rename resource 'addrbook2.css'
+1670373764252	Rename resource 'addrbook_list2.jsp'
+1670373767143	Rename resource 'addrbook_form2.jsp'
+1670373769639	Rename resource 'addrbook_error2.jsp'
+1670373778695	Rename resource 'addrbook_edit_form2.jsp'
+1670402939000	Rename resource 'addrbook_form_edit.jsp'

@@ -19,7 +19,7 @@ public class AddrDao {
 	}
 	
 	
-	// 연결
+	// DB 연결
 	private Connection getConnection() {
 		Context context = null;
 		DataSource dataSource = null;
@@ -50,7 +50,10 @@ public class AddrDao {
 		
 		try {
 			connection = getConnection();
-			pstmt = connection.prepareStatement("SELECT * FROM addrbook ORDER BY id DESC");
+			pstmt = connection.prepareStatement
+					("SELECT * "
+					+ "FROM addrbook "
+					+ "ORDER BY id DESC");
 			resultSet = pstmt.executeQuery();
 			
 			while(resultSet.next()) {
@@ -92,7 +95,8 @@ public class AddrDao {
 		
 		try {
 			connection = getConnection();
-			pstmt = connection.prepareStatement("INSERT INTO addrbook VALUES(addr_seq.nextval, ?, ?, ?, ?, ?, ?)");
+			pstmt = connection.prepareStatement
+					("INSERT INTO addrbook VALUES(addr_seq.nextval, ?, ?, ?, ?, ?, ?)");
 			
 			pstmt.setString(1, addr.getName());
 			pstmt.setString(2, addr.getEmail());
@@ -130,9 +134,7 @@ public class AddrDao {
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement
-					("SELECT *"
-					+ "FROM addrbook"
-					+ "WHERE id=?");
+					("SELECT * FROM addrbook WHERE id=?");
 			pstmt.setInt(1, id);
 			resultSet = pstmt.executeQuery();
 			
@@ -174,9 +176,7 @@ public class AddrDao {
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement
-					("UPDATE addrbook"
-					+ "SET name = ?, email = ?, comdept = ?, birth = ?, tel = ?, memo = ?"
-					+ "WHERE id ="+id );
+					("UPDATE addrbook SET name = ?, email = ?, comdept = ?, birth = ?, tel = ?, memo = ? WHERE id ="+id );
 			pstmt.setString(1, addrDto.getName());
 			pstmt.setString(2, addrDto.getEmail());
 			pstmt.setString(3, addrDto.getComdept());

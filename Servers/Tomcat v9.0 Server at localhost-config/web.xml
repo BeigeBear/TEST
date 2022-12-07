@@ -4732,4 +4732,9 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+	<context-param>
+		<param-name>propfile</param-name>
+		<param-value>c:Temp/my.conf</param-value>
+	</context-param>
+
 </web-app>

@@ -14,17 +14,10 @@ public class UpdateServiceImpl implements UpdateService {
 	}
 
 	@Override
-	public void executeUpdate(HttpServletRequest request, HttpServletResponse response) {
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int updateId = (int) request.getAttribute("updateId");
 		AddrDto updAddrDto = (AddrDto) request.getAttribute("updateAddr");
 		addrDao.updateAddr(updateId, updAddrDto);
-	}
-	
-	@Override
-	public AddrDto executeRead(HttpServletRequest request, HttpServletResponse response) {
-		int updateId = (int) request.getAttribute("updateId");
-		return addrDao.readById(updateId);
-		
 	}
 
 }

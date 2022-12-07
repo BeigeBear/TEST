@@ -2,22 +2,12 @@
     pageEncoding="UTF-8"
     errorPage="addrbook_error.jsp" 
     import="com.addrbook.model.*, java.util.*" %>
-    
-<jsp:useBean id="addrList" scope="request" class="java.util.ArrayList" />
-
-    
+     
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="addrbook.css" type="text/css" media = "screen" />
-	<script>
-		function send(id){
-			document.location.href = "/Addrbook/Read.do";
-			request.setAttribute("readId", id);
-		}
-	</script>
-
 	<title>주소록 : 목록</title>
 </head>
 
@@ -37,25 +27,28 @@
 			<th>생일</th>
 			<th>회사</th>
 			<th>메모</th>
+			<th>비고</th>
 			</tr>
 			
 			<%
-				for(AddrDto addr : (ArrayList<AddrDto>) addrList) {
+				ArrayList<AddrDto> List = (ArrayList<AddrDto>) request.getAttribute("addrList");
+				if(List != null) {
+					for(AddrDto addr : List) {
 			 %>
 				<tr>
-					<td><a href="javascript:send( <%=addr.getId() %> )" >
-					<%= addr.getId() %>
-					</a></td>
+					<td><%= addr.getId() %> </td>
 					<td> <%=addr.getEmail() %> </td>
 					<td> <%=addr.getComdept() %> </td>
 					<td> <%=addr.getBirth() %> </td>
 					<td> <%=addr.getTel() %> </td>
 					<td> <%=addr.getMemo() %> </td>
+					<td> <a href="addrbook_edit_form.jsp?id=<%=addr.getId() %>" >수정</a></td>
 				</tr>
 			<%
+					}
 				}
 			%>
-	</table>
+	</table>2
 	</form>
 		
 </div>

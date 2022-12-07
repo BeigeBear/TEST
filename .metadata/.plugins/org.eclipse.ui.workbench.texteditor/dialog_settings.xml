@@ -8,8 +8,8 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="UTF-8"/>
 		<list key="findhistory">
-			<item value="utf-8"/>
 			<item value="EUC-KR"/>
+			<item value="utf-8"/>
 		</list>
 		<list key="replacehistory">
 			<item value="UTF-8"/>

@@ -1,30 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    errorPage="addrbook_error.jsp"
     import="com.addrbook.model.*, java.util.*" %>
+<%--     errorPage="addrbook_error.jsp" --%>
     
 <jsp:useBean id="addr" scope="request" class="com.addrbook.model.AddrDto" />
-<%
-%>
+<jsp:useBean id="Dao" scope="request" class="com.addrbook.model.AddrDao" />
 
-    
+<% addr = Dao.readById(Integer.parseInt(request.getParameter("id"))); %>
+<% session.setAttribute("editId", request.getParameter("id")); %>
+
 <!DOCTYPE html>
 <html>
+
 <head>
-	
 	<script>
 		function delcheck(){
 			result = confirm("정말로 삭제하시겠습니까?");
-			
+					
 			if(result){
-				document.form1.action.value="delete";
-				document.form1.submit();
+				document.form1.action.value="/Addrbook/list.do";
+				document.form1.action.submit;
 			}
 			else {
 				return;
 			}
 		}
 	</script>
+		
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="addrbook.css" type="text/css" media="screen"/>
 </head>
@@ -36,11 +38,10 @@
 	<h2>주소록 : 수정화면</h2>
 	<hr>
 	<a href = /Addrbook/list.do >주소록 목록</a><p>
+	
 	<form name = form1
 		method = post
 		action = /Addrbook/update.do >
-
-	<input type=hidden name="id" value="<%=addr.getId()%>">
 	
 	<table border="1">
 		<tr>
@@ -81,14 +82,7 @@
 		</tr>
 	
 	</table>
-	
-	
 	</form>
-	
-	
-	
-
-
 </div>
 </body>
 

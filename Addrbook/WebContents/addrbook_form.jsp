@@ -15,12 +15,11 @@
 <div align="center">
 	<h2>주소록 : 작성화면</h2>
 	<hr>
-	<a href=index.jsp>[ 주소록 목록으로 ]</a><p>
+	<a href="/Addrbook/list.do">주소록 목록으로</a><p>
 	
 	<form name = form1
 		method = post
 		action = "/Addrbook/insert.do" >
-
 	<table border="1">
 		<tr>
 		<th>이름</th>

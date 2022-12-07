@@ -14,7 +14,6 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="javax.xml.ws.Response"/>
     <fullyQualifiedTypeName name="com.addrbook.service.InsertServiceImpl"/>
     <fullyQualifiedTypeName name="com.addrbook.service.InsertService"/>
@@ -26,8 +25,21 @@
     <fullyQualifiedTypeName name="com.addrbook.service.UpdateService"/>
     <fullyQualifiedTypeName name="com.addrbook.service.UpdateServiceImpl"/>
     <fullyQualifiedTypeName name="com.addrbook.service.DeleteService"/>
-    <fullyQualifiedTypeName name="com.addrbook.service.DeleteServiceImpl"/>
     <fullyQualifiedTypeName name="com.addrbook.model.AddrDao"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.addrbook.model.AddrDto"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContextListener"/>
+    <fullyQualifiedTypeName name="ch13_application.PropertyListener"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContextEvent"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.logging.Logger"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="javax.websocket.Session"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.addrbook.service.DeleteServiceImpl"/>
 </qualifiedTypeNameHistroy>
