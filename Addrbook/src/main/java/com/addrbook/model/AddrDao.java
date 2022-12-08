@@ -51,9 +51,7 @@ public class AddrDao {
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement
-					("SELECT * "
-					+ "FROM addrbook "
-					+ "ORDER BY id DESC");
+					("SELECT * FROM addrbook ORDER BY id ASC");
 			resultSet = pstmt.executeQuery();
 			
 			while(resultSet.next()) {
@@ -176,7 +174,7 @@ public class AddrDao {
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement
-					("UPDATE addrbook SET name = ?, email = ?, comdept = ?, birth = ?, tel = ?, memo = ? WHERE id ="+id );
+					("UPDATE addrbook SET name=?, email=?, comdept=?, birth=?, tel=?, memo=? WHERE id ="+id);
 			pstmt.setString(1, addrDto.getName());
 			pstmt.setString(2, addrDto.getEmail());
 			pstmt.setString(3, addrDto.getComdept());
@@ -210,9 +208,7 @@ public class AddrDao {
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement
-					("DELETE"
-					+ "FROM addrbook"
-					+ "WHERE id="+id);
+					("DELETE FROM addrbook WHERE id="+id);
 			
 			pstmt.executeUpdate();
 		}

@@ -23,6 +23,7 @@
 			<tr>
 			<th>번호</th>
 			<th>이름</th>
+			<th>이메일</th>
 			<th>전화번호</th>
 			<th>생일</th>
 			<th>회사</th>
@@ -36,7 +37,8 @@
 					for(AddrDto addr : List) {
 			 %>
 				<tr>
-					<td><%= addr.getId() %> </td>
+					<td> <%=addr.getId() %> </td>
+					<td> <%=addr.getName() %> </td>
 					<td> <%=addr.getEmail() %> </td>
 					<td> <%=addr.getComdept() %> </td>
 					<td> <%=addr.getBirth() %> </td>
@@ -48,7 +50,7 @@
 					}
 				}
 			%>
-	</table>2
+	</table>
 	</form>
 		
 </div>

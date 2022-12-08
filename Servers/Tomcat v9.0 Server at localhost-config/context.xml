@@ -27,7 +27,7 @@
     <Manager pathname="" />
     -->
     
-    <Resource
+	<Resource
    auth="Container"
    driverClassName="oracle.jdbc.driver.OracleDriver"
    name="jdbc/Oracle11g"
@@ -38,6 +38,4 @@
    maxActive="50"
    maxWait="500"
    />
-    
-    
 </Context>

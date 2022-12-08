@@ -120,21 +120,6 @@ public class FrontController extends HttpServlet {
 			response.sendRedirect("/Addrbook/list.do");
 		}
 
-		
-//		#################################################################################################
-		
-		
-		// 연락처 호출
-		if(command.equals("/Read.do")) {
-			
-			HttpSession session = request.getSession();
-			
-			int readId = (int) session.getAttribute("readId");
-			
-			
-		}
-		
-	}
+	} // actionDo
 	
 }
-
