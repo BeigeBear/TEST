@@ -11,7 +11,7 @@
 
 <body>
 
-	<!-- /프로젝트명/*.do -->
+	<!-- e/프로젝트명/*.do -->
 	<% response.sendRedirect("/Addrbook/list.do"); %>
 
 </body>
