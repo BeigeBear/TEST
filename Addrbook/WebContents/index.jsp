@@ -11,7 +11,8 @@
 
 <body>
 
-	<!-- e/프로젝트명/*.do -->
+	<!-- 테스트 문구 -->
+	<!-- /프로젝트명/*.do -->
 	<% response.sendRedirect("/Addrbook/list.do"); %>
 
 </body>
